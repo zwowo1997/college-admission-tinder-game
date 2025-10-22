@@ -260,12 +260,10 @@ body {
 }
 
 .profile-card.swiping-left {
-    transform: translateX(-100px) rotate(-10deg);
     box-shadow: -20px 10px 40px rgba(255, 0, 0, 0.3);
 }
 
 .profile-card.swiping-right {
-    transform: translateX(100px) rotate(10deg);
     box-shadow: 20px 10px 40px rgba(0, 255, 0, 0.3);
 }
 

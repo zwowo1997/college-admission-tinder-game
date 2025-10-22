@@ -445,9 +445,17 @@ class CollegeAdmissionsGame {
     updateCardPosition(deltaX) {
         const card = document.getElementById('profile-card');
         const rotation = deltaX * 0.1;
+        const threshold = 100;
         
+        // Disable transition during dragging for immediate response
+        card.style.transition = 'none';
         card.style.transform = `translateX(${deltaX}px) rotate(${rotation}deg)`;
         
+        // Add opacity feedback based on swipe distance
+        const opacity = Math.max(0.7, 1 - Math.abs(deltaX) / 200);
+        card.style.opacity = opacity;
+        
+        // Update visual feedback classes
         if (deltaX > 0) {
             card.classList.add('swiping-right');
             card.classList.remove('swiping-left');
@@ -459,8 +467,16 @@ class CollegeAdmissionsGame {
 
     resetCardPosition() {
         const card = document.getElementById('profile-card');
-        card.style.transform = '';
+        // Add transition for smooth bounce back
+        card.style.transition = 'transform 0.3s ease-out, box-shadow 0.3s ease-out, opacity 0.3s ease-out';
+        card.style.transform = 'translateX(0) rotate(0deg)';
+        card.style.opacity = '1';
         card.classList.remove('swiping-left', 'swiping-right');
+        
+        // Remove transition after animation completes
+        setTimeout(() => {
+            card.style.transition = '';
+        }, 300);
     }
 
     showHomeScreen() {
