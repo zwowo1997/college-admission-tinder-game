@@ -1,0 +1,25 @@
+{
+  "name": "college-admissions-tinder",
+  "version": "1.0.0",
+  "description": "A Tinder-like mobile game where you play as a college admission officer",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "college",
+    "admissions",
+    "game",
+    "tinder",
+    "mobile",
+    "education"
+  ],
+  "author": "Allen Zhang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/college-admissions-tinder.git"
+  },
+  "homepage": "https://college-admissions-tinder.vercel.app"
+}

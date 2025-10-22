@@ -1,0 +1,923 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #badfdb 0%, #FFA4A4 100%);
+    min-height: 100vh;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.stats {
+    display: flex;
+    gap: 1rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #718096;
+    font-weight: 500;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+/* Home Screen */
+.home-screen {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.home-content {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.home-header {
+    margin-bottom: 2rem;
+}
+
+.home-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.home-subtitle {
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.5;
+}
+
+.disclaimer {
+    background: #fef5e7;
+    border: 2px solid #f6ad55;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.disclaimer h3 {
+    color: #c05621;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.disclaimer p {
+    color: #744210;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.game-info {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.game-info h3 {
+    color: #2d3748;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.instruction-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background: #f7fafc;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.instruction-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.instruction-item span:last-child {
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.play-btn {
+    background: linear-gradient(135deg, #667eea 0%, #644ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 1.25rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
+}
+
+.play-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(102, 126, 234, 0.4);
+}
+
+.play-btn:active {
+    transform: translateY(-1px);
+}
+
+.play-btn-text {
+    font-size: 1.1rem;
+}
+
+.play-btn-icon {
+    font-size: 1.5rem;
+}
+
+/* Game Container */
+.game-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.loading-content {
+    text-align: center;
+    color: white;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.loading-content p {
+    opacity: 0.8;
+}
+
+/* Profile Card */
+.profile-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    touch-action: pan-y;
+}
+
+.profile-card.swiping-left {
+    transform: translateX(-100px) rotate(-10deg);
+    box-shadow: -20px 10px 40px rgba(255, 0, 0, 0.3);
+}
+
+.profile-card.swiping-right {
+    transform: translateX(100px) rotate(10deg);
+    box-shadow: 20px 10px 40px rgba(0, 255, 0, 0.3);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.student-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.name-disclaimer {
+    background: #ff6b6b;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: help;
+    transition: all 0.3s ease;
+}
+
+.name-disclaimer:hover {
+    background: #ff5252;
+    transform: scale(1.1);
+}
+
+.school-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.college-logo {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.college-logo-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.college-logo-fallback {
+    font-size: 1.2rem;
+}
+
+.student-school {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-number {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+/* Sections */
+.stats-section, .section {
+    margin-bottom: 1.5rem;
+}
+
+.stats-section h3, .section h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.stat-item {
+    background: #f7fafc;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-item .stat-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #718096;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.stat-item .stat-value {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+/* Extracurriculars and Awards */
+.extracurriculars-list, .awards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.activity-item, .award-item {
+    background: #f7fafc;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.no-data {
+    color: #a0aec0;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Intended Major */
+.major-info {
+    background: #f7fafc;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.major-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+/* Demographics */
+.demographics {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.demo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.demo-item:last-child {
+    border-bottom: none;
+}
+
+.demo-label {
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.demo-value {
+    color: #2d3748;
+    font-weight: 600;
+}
+
+/* Card Actions */
+.card-actions {
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    background: #f7fafc;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.reject-btn {
+    background: #fed7d7;
+    color: #c53030;
+}
+
+.reject-btn:hover {
+    background: #feb2b2;
+    transform: translateY(-2px);
+}
+
+.admit-btn {
+    background: #c6f6d5;
+    color: #2f855a;
+}
+
+.admit-btn:hover {
+    background: #9ae6b4;
+    transform: translateY(-2px);
+}
+
+.btn-icon {
+    font-size: 1.5rem;
+}
+
+.btn-text {
+    font-size: 0.9rem;
+}
+
+/* Swipe Feedback */
+.swipe-feedback {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 200;
+    pointer-events: none;
+}
+
+.feedback-text {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feedback-text.show {
+    opacity: 1;
+}
+
+.feedback-text.correct {
+    background: rgba(34, 197, 94, 0.9);
+}
+
+.feedback-text.incorrect {
+    background: rgba(239, 68, 68, 0.9);
+}
+
+/* Results Screen */
+.results-screen {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.results-screen.hidden {
+    display: none;
+}
+
+.results-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 2rem;
+}
+
+.final-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.final-stat {
+    text-align: center;
+}
+
+.final-stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 0.25rem;
+}
+
+.final-stat-label {
+    font-size: 0.9rem;
+    color: #718096;
+    font-weight: 500;
+}
+
+.results-breakdown {
+    margin-bottom: 2rem;
+}
+
+.results-breakdown h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+.breakdown-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.breakdown-item {
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.breakdown-item.correct {
+    background: #c6f6d5;
+    color: #2f855a;
+}
+
+.breakdown-item.incorrect {
+    background: #fed7d7;
+    color: #c53030;
+}
+
+.breakdown-count {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.breakdown-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #f7fafc;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+}
+
+.btn-secondary:hover {
+    background: #edf2f7;
+    transform: translateY(-2px);
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .game-container {
+        padding: 0.5rem;
+    }
+    
+    .header-content {
+        padding: 0 1rem;
+    }
+    
+    .game-title {
+        font-size: 1.25rem;
+    }
+    
+    .stats {
+        gap: 0.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
+    }
+    
+    .stat-value {
+        font-size: 1rem;
+    }
+    
+    /* Home Screen Mobile */
+    .home-screen {
+        padding: 1rem 0.5rem;
+    }
+    
+    .home-title {
+        font-size: 2rem;
+    }
+    
+    .home-subtitle {
+        font-size: 1rem;
+    }
+    
+    .disclaimer {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .disclaimer h3 {
+        font-size: 1rem;
+    }
+    
+    .disclaimer p {
+        font-size: 0.85rem;
+    }
+    
+    .game-info {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .game-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .instruction-item {
+        padding: 0.5rem;
+        gap: 0.75rem;
+    }
+    
+    .instruction-icon {
+        font-size: 1.25rem;
+    }
+    
+    .play-btn {
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .play-btn-text {
+        font-size: 1rem;
+    }
+    
+    .play-btn-icon {
+        font-size: 1.25rem;
+    }
+    
+    .card-header {
+        padding: 1rem;
+    }
+    
+    .student-name {
+        font-size: 1.25rem;
+    }
+    
+    .name-disclaimer {
+        width: 18px;
+        height: 18px;
+        font-size: 0.7rem;
+    }
+    
+    .student-school {
+        font-size: 1rem;
+    }
+    
+    .college-logo {
+        font-size: 1rem;
+    }
+    
+    .college-logo-img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .card-content {
+        padding: 1rem;
+    }
+    
+    .stats-grid {
+        gap: 0.5rem;
+    }
+    
+    .stat-item {
+        padding: 0.75rem;
+    }
+    
+    .card-actions {
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+    
+    .action-btn {
+        padding: 0.75rem;
+    }
+    
+    .results-content {
+        padding: 1.5rem;
+    }
+    
+    .final-stats {
+        gap: 0.5rem;
+    }
+    
+    .final-stat-value {
+        font-size: 1.5rem;
+    }
+}
+
+/* Disclaimer Modal */
+.disclaimer-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.disclaimer-content {
+    background: white;
+    border-radius: 16px;
+    padding: 0;
+    max-width: 350px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.disclaimer-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 16px 16px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.disclaimer-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.disclaimer-body {
+    padding: 1.5rem;
+}
+
+.disclaimer-body p {
+    margin: 0 0 1rem 0;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.disclaimer-body p:last-child {
+    margin-bottom: 0;
+}
+
+.disclaimer-body strong {
+    color: #2d3748;
+}
+
+/* Touch Interactions */
+@media (hover: none) and (pointer: coarse) {
+    .action-btn:hover {
+        transform: none;
+    }
+    
+    .btn-primary:hover,
+    .btn-secondary:hover {
+        transform: none;
+    }
+}
