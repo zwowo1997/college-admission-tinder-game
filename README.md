@@ -28,7 +28,7 @@ The game uses a **selective school performance** system:
 
 ## 🚀 Live Demo
 
-[Play the game here](https://college-admissions-tinder.vercel.app)
+[Play the game here](https://college-admission-tinder-game.vercel.app)
 
 ## 🛠️ Tech Stack
 
@@ -81,8 +81,8 @@ The game includes 15 diverse student profiles with:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/college-admissions-tinder.git
-cd college-admissions-tinder
+git clone https://github.com/zwowo1997/college-admission-tinder-game.git
+cd college-admission-tinder-game
 ```
 
 2. Start a local server:
