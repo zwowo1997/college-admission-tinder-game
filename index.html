@@ -3,233 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Admissions Game</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>College Admissions Game - Simple Test</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #badfdb 0%, #FFA4A4 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .test-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <div id="app">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <h1 class="game-title">🎓 Admissions Tinder</h1>
-                <div class="stats">
-                    <div class="stat">
-                        <span class="stat-label">Score</span>
-                        <span id="score" class="stat-value">0</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">Accuracy</span>
-                        <span id="accuracy" class="stat-value">0%</span>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Home Screen -->
-        <div id="home-screen" class="home-screen">
-            <div class="home-content">
-                <div class="home-header">
-                    <h1 class="home-title">🎓 Admissions Tinder</h1>
-                    <p class="home-subtitle">Play as a college admission officer and test your decision-making skills</p>
-                </div>
-                
-                <div class="disclaimer">
-                    <h3>⚠️ Important Notice</h3>
-                    <p>Public admission results scraped from Reddit. Personal information has been de-identified for educational purposes.</p>
-                </div>
-                
-                <div class="game-info">
-                    <h3>How to Play</h3>
-                    <div class="instructions">
-                        <div class="instruction-item">
-                            <span class="instruction-icon">👀</span>
-                            <span>Review student profiles</span>
-                        </div>
-                        <div class="instruction-item">
-                            <span class="instruction-icon">👆</span>
-                            <span>Swipe right to admit, left to reject</span>
-                        </div>
-                        <div class="instruction-item">
-                            <span class="instruction-icon">📊</span>
-                            <span>Compare your decisions with real results</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <button id="play-btn" class="play-btn">
-                    <span class="play-btn-text">Start Playing</span>
-                    <span class="play-btn-icon">🚀</span>
-                </button>
-            </div>
+    <div class="container">
+        <h1>🎓 College Admissions Game</h1>
+        <div class="test-info">
+            <h3>Deployment Test</h3>
+            <p>✅ HTML is loading</p>
+            <p>✅ CSS is working</p>
+            <p>✅ Fonts are loading</p>
+            <p>✅ Layout is responsive</p>
         </div>
-
-        <!-- Main Game Area -->
-        <main class="game-container">
-            <div id="game-screen" class="game-screen hidden">
-                <!-- Student Profile Card -->
-                <div id="profile-card" class="profile-card">
-                    <div class="card-header">
-                        <div class="student-info">
-                            <h2 id="student-name" class="student-name">Loading...<span class="name-disclaimer" title="This name is artificial to remove personal information">!</span></h2>
-                            <div class="school-info">
-                                <span id="college-logo" class="college-logo">🎓</span>
-                                <p id="student-school" class="student-school"></p>
-                            </div>
-                        </div>
-                        <div class="card-number">
-                            <span id="card-counter">1</span> / <span id="total-cards">0</span>
-                        </div>
-                    </div>
-
-                    <div class="card-content">
-                        <!-- Academic Stats -->
-                        <div class="stats-section">
-                            <h3>📊 Academic Stats</h3>
-                            <div class="stats-grid">
-                                <div class="stat-item">
-                                    <span class="stat-label">GPA</span>
-                                    <span id="gpa" class="stat-value">-</span>
-                                </div>
-                                <div class="stat-item">
-                                    <span class="stat-label">SAT/ACT</span>
-                                    <span id="test-scores" class="stat-value">-</span>
-                                </div>
-                                <div class="stat-item">
-                                    <span class="stat-label">Rank</span>
-                                    <span id="rank" class="stat-value">-</span>
-                                </div>
-                                <div class="stat-item">
-                                    <span class="stat-label">AP/IB</span>
-                                    <span id="advanced-courses" class="stat-value">-</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Extracurriculars -->
-                        <div class="section">
-                            <h3>🏆 Extracurriculars</h3>
-                            <div id="extracurriculars" class="extracurriculars-list">
-                                <p class="no-data">No data available</p>
-                            </div>
-                        </div>
-
-                        <!-- Awards -->
-                        <div class="section">
-                            <h3>🏅 Awards & Prizes</h3>
-                            <div id="awards" class="awards-list">
-                                <p class="no-data">No data available</p>
-                            </div>
-                        </div>
-
-                        <!-- Intended Major -->
-                        <div class="section" id="major-section" style="display: none;">
-                            <h3>🎯 Intended Major</h3>
-                            <div class="major-info">
-                                <span id="intended-major" class="major-text">Not specified</span>
-                            </div>
-                        </div>
-
-                        <!-- Demographics -->
-                        <div class="section">
-                            <h3>👤 Demographics</h3>
-                            <div class="demographics">
-                                <div class="demo-item">
-                                    <span class="demo-label">Race/Ethnicity:</span>
-                                    <span id="race" class="demo-value">Not specified</span>
-                                </div>
-                                <div class="demo-item">
-                                    <span class="demo-label">Gender:</span>
-                                    <span id="gender" class="demo-value">Not specified</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Swipe Actions -->
-                    <div class="card-actions">
-                        <button id="reject-btn" class="action-btn reject-btn">
-                            <span class="btn-icon">❌</span>
-                            <span class="btn-text">REJECT</span>
-                        </button>
-                        <button id="admit-btn" class="action-btn admit-btn">
-                            <span class="btn-icon">✅</span>
-                            <span class="btn-text">ADMIT</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Swipe Feedback -->
-                <div id="swipe-feedback" class="swipe-feedback">
-                    <div id="feedback-text" class="feedback-text"></div>
-                </div>
-
-                <!-- Name Disclaimer Modal -->
-                <div id="disclaimer-modal" class="disclaimer-modal hidden">
-                    <div class="disclaimer-content">
-                        <div class="disclaimer-header">
-                            <h3>🔒 Privacy Notice</h3>
-                            <button id="close-disclaimer" class="close-btn">&times;</button>
-                        </div>
-                        <div class="disclaimer-body">
-                            <p>This name is artificial and has been de-identified to protect personal information.</p>
-                            <p><strong>All student names in this game are synthetic.</strong></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Results Screen -->
-            <div id="results-screen" class="results-screen hidden">
-                <div class="results-content">
-                    <h2>🎯 Your Results</h2>
-                    <div class="final-stats">
-                        <div class="final-stat">
-                            <span class="final-stat-value" id="final-score">0</span>
-                            <span class="final-stat-label">Total Score</span>
-                        </div>
-                        <div class="final-stat">
-                            <span class="final-stat-value" id="final-accuracy">0%</span>
-                            <span class="final-stat-label">Accuracy</span>
-                        </div>
-                        <div class="final-stat">
-                            <span class="final-stat-value" id="total-decisions">0</span>
-                            <span class="final-stat-label">Decisions Made</span>
-                        </div>
-                    </div>
-
-                    <div class="results-breakdown">
-                        <h3>📈 Decision Breakdown</h3>
-                        <div class="breakdown-grid">
-                            <div class="breakdown-item correct">
-                                <span class="breakdown-count" id="correct-count">0</span>
-                                <span class="breakdown-label">Correct</span>
-                            </div>
-                            <div class="breakdown-item incorrect">
-                                <span class="breakdown-count" id="incorrect-count">0</span>
-                                <span class="breakdown-label">Incorrect</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="action-buttons">
-                        <button id="play-again-btn" class="btn btn-primary">Play Again</button>
-                        <button id="share-btn" class="btn btn-secondary">Share Results</button>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <!-- Loading Screen -->
-        <div id="loading-screen" class="loading-screen">
-            <div class="loading-content">
-                <div class="loading-spinner"></div>
-                <h2>Loading Student Profiles...</h2>
-                <p>Preparing your admissions challenge</p>
-            </div>
-        </div>
+        <button class="btn" onclick="testJS()">Test JavaScript</button>
+        <div id="js-test" style="margin-top: 20px;"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function testJS() {
+            document.getElementById('js-test').innerHTML = '<p style="color: green;">✅ JavaScript is working!</p>';
+        }
+        
+        // Test if the main script would load
+        console.log('Simple test page loaded successfully');
+    </script>
 </body>
 </html>
