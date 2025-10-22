@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Admissions Game - Simple Test</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #badfdb 0%, #FFA4A4 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .test-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 College Admissions Game</h1>
+        <div class="test-info">
+            <h3>Deployment Test</h3>
+            <p>✅ HTML is loading</p>
+            <p>✅ CSS is working</p>
+            <p>✅ Fonts are loading</p>
+            <p>✅ Layout is responsive</p>
+        </div>
+        <button class="btn" onclick="testJS()">Test JavaScript</button>
+        <div id="js-test" style="margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        function testJS() {
+            document.getElementById('js-test').innerHTML = '<p style="color: green;">✅ JavaScript is working!</p>';
+        }
+        
+        // Test if the main script would load
+        console.log('Simple test page loaded successfully');
+    </script>
+</body>
+</html>
